@@ -158,26 +158,7 @@ export const ServicesIndexView: React.FC<ServicesIndexViewProps> = ({
                         <strong className="font-mono text-red-700 tabular-nums">{service.number}.</strong>{' '}
                         {isAr ? service.categoryLabel.ar : service.categoryLabel.en}
                       </span>
-                      <button
-                        type="button"
-                        onClick={() => handleCopyUrl(service.slug)}
-                        className="inline-flex items-center gap-1 font-mono text-[11px] text-slate-600 hover:text-slate-950 cursor-pointer"
-                        title={isAr ? 'نسخ رابط الصفحة المستقلة' : 'Copy direct page URL'}
-                      >
-                        {copiedSlug === service.slug ? (
-                          <>
-                            <Check className="w-3.5 h-3.5 text-emerald-700" />
-                            <span className="text-emerald-700 font-sans font-bold">
-                              {isAr ? 'تم النسخ' : 'Copied'}
-                            </span>
-                          </>
-                        ) : (
-                          <>
-                            <Copy className="w-3 h-3" />
-                            <span dir="ltr">/{service.slug}</span>
-                          </>
-                        )}
-                      </button>
+                      
                     </div>
 
                     <h2 className="text-xl font-extrabold text-slate-950">
@@ -314,25 +295,7 @@ export const ServiceDetailView: React.FC<ServiceDetailViewProps> = ({
             </nav>
 
             {/* Dedicated Page Link Copy Control */}
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-slate-400">
-                {isAr ? 'رابط الصفحة المباشر:' : 'Direct Page Link:'}
-              </span>
-              <button
-                type="button"
-                onClick={handleCopyDirectLink}
-                className="px-3 py-1.5 text-xs font-mono bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 rounded-lg inline-flex items-center gap-2 cursor-pointer transition-colors"
-              >
-                <span dir="ltr">/{service.slug}</span>
-                {copied ? (
-                  <span className="text-emerald-400 font-sans font-bold">
-                    {isAr ? 'تم النسخ!' : 'Copied!'}
-                  </span>
-                ) : (
-                  <Copy className="w-3.5 h-3.5 text-slate-400" />
-                )}
-              </button>
-            </div>
+            
           </div>
 
           <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
